@@ -17,14 +17,6 @@ class Sport(models.Model):
     def __str__(self):
         return self.name
 
-class Trip(models.Model):
-    STATUS_CHOICES = [
-        ('planning', 'Planning'),
-        ('approved', 'Approved'),
-        ('in_progress', 'In Progress'),
-        ('completed', 'Completed'),
-        ('cancelled', 'Cancelled'),
-    ]
     
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     title = models.CharField(max_length=120)
