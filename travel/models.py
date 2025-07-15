@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+STATUS_CHOICES = [
+    ('planning', 'Planning'),
+    ('booked', 'Booked'),
+    ('completed', 'Completed'),
+    ('cancelled', 'Cancelled'),
+]
 
 class Trip(models.Model):
     name = models.CharField(max_length=100)
