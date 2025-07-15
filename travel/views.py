@@ -1,7 +1,5 @@
-# Create the travel app views.py file
-views_content = '''from django.shortcuts import render
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
 
 def home(request):
     """Homepage view"""
@@ -34,9 +32,3 @@ def dashboard(request):
         'user': request.user,
     }
     return render(request, 'travel/dashboard.html', context)
-'''
-
-with open('travel_views.py', 'w') as f:
-    f.write(views_content)
-
-print("✅ travel/views.py created")
