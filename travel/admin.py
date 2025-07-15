@@ -22,9 +22,9 @@ class TripTravelerAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ['trip', 'booking_type', 'vendor', 'start_datetime', 'cost_estimate']
-    list_filter = ['booking_type', 'trip__sport']
+    list_filter = ['booking_type', 'trip']
 
 @admin.register(Expense)
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ['trip', 'category', 'amount', 'description', 'incurred_at']
-    list_filter = ['category', 'trip__sport']
+    list_filter = ['category', 'trip']
