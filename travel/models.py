@@ -18,7 +18,7 @@ class Sport(models.Model):
         return self.name
 
     
-    sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    sport = models.ForeignKey('self', on_delete=models.CASCADE)
     title = models.CharField(max_length=120)
     destination_city = models.CharField(max_length=100)
     destination_state = models.CharField(max_length=50, blank=True)
