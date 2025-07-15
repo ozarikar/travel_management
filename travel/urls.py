@@ -13,3 +13,11 @@ urlpatterns = [
 
 def home(request):
     return render(request, 'travel/home.html')
+def about(request):
+    return render(request, 'travel/about.html')
+
+def contact(request):
+    return render(request, 'travel/contact.html')
+
+def dashboard(request):
+    return render(request, 'travel/dashboard.html')
