@@ -1,13 +1,9 @@
-{% extends "travel/home.html" %}
+{% extends "travel/base.html" %}
+{% block title %}Dashboard - Travel Management System{% endblock %}
 {% block content %}
 <div class="container my-5">
   <h2>Dashboard</h2>
   <p>Welcome, {{ user.get_full_name|default:user.username }}!</p>
-  <ul>
-    <li>View and manage upcoming trips</li>
-    <li>Upload travel documents</li>
-    <li>Assign team members</li>
-    <li>And more...</li>
-  </ul>
+  <!-- Add dashboard content here -->
 </div>
 {% endblock %}

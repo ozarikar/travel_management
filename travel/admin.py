@@ -30,3 +30,7 @@ class BookingAdmin(admin.ModelAdmin):
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ['trip', 'category', 'amount', 'description', 'incurred_at']
     list_filter = ['category', 'trip__sport']
+
+from .models import Trip
+
+admin.site.register(Trip)
