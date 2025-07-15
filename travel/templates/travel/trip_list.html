@@ -1,0 +1,32 @@
+{% extends "travel/base.html" %}
+{% block title %}Trips - Travel Management System{% endblock %}
+{% block content %}
+<div class="container my-5">
+  <h2>All Trips</h2>
+  <a href="{% url 'travel:add_trip' %}" class="btn btn-success mb-3">Add New Trip</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for trip in trips %}
+      <tr>
+        <td>{{ trip.name }}</td>
+        <td>{{ trip.destination }}</td>
+        <td>{{ trip.start_date }}</td>
+        <td>{{ trip.end_date }}</td>
+        <td>{{ trip.notes }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5">No trips yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

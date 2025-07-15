@@ -9,6 +9,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('trips/', views.trip_list, name='trip_list'),
+    path('trips/add/', views.add_trip, name='add_trip'),
 ]
 
 def home(request):

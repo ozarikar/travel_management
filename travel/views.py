@@ -1,5 +1,23 @@
-from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .models import Trip
+from .forms import TripForm
+from django.shortcuts import render, redirect
+
+@login_required
+def trip_list(request):
+    trips = Trip.objects.all()
+    return render(request, 'travel/trip_list.html', {'trips': trips})
+
+@login_required
+def add_trip(request):
+    if request.method == 'POST':
+        form = TripForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('travel:trip_list')
+    else:
+        form = TripForm()
+    return render(request, 'travel/add_trip.html', {'form': form})
 
 def home(request):
     """Homepage view"""
