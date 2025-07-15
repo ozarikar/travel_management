@@ -7,9 +7,7 @@ class SportAdmin(admin.ModelAdmin):
 
 @admin.register(Trip)
 class TripAdmin(admin.ModelAdmin):
-    list_display = ['title', 'sport', 'destination_city', 'start_date', 'end_date', 'status']
-    list_filter = ['sport', 'status', 'start_date']
-    search_fields = ['title', 'destination_city']
+    list_display = ('name', 'destination', 'start_date', 'end_date')
 
 @admin.register(Traveler)
 class TravelerAdmin(admin.ModelAdmin):
@@ -30,7 +28,3 @@ class BookingAdmin(admin.ModelAdmin):
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ['trip', 'category', 'amount', 'description', 'incurred_at']
     list_filter = ['category', 'trip__sport']
-
-from .models import Trip
-
-admin.site.register(Trip)
